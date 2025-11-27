@@ -216,23 +216,25 @@ function setupAdModal() {
 
 /*LightBox */
 
-  // prendo elementi del lightbox
-  const lightbox    = document.getElementById('lightbox');
+/* LightBox */
+
+// prendo l'elemento lightbox (se esiste)
+const lightbox = document.getElementById('lightbox');
+
+if (lightbox) {
   const lightboxImg = lightbox.querySelector('img');
   const closeBtn    = lightbox.querySelector('.lightbox-close');
 
-  // tutte le immagini della sezione contenutoHome
+  // tutte le immagini di contenutoHome e contenutoFind (se ci sono)
   const galleryImages = document.querySelectorAll('.contenutoHome img, .contenutoFind img');
 
   galleryImages.forEach(img => {
     img.addEventListener('click', function () {
-      // se hai data-full uso quello, altrimenti il src normale
       const fullSrc = this.dataset.full || this.src;
       lightboxImg.src = fullSrc;
       lightbox.classList.add('open');
     });
   });
-
 
   // chiudi cliccando sulla X
   closeBtn.addEventListener('click', function () {
@@ -251,7 +253,9 @@ function setupAdModal() {
     if (e.key === 'Escape') {
       lightbox.classList.remove('open');
     }
-  })
+  });
+}
+
 
 
 

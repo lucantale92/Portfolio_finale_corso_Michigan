@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find a musician</title>
+    <link rel="stylesheet" href="CSS/main.css">
+</head>
+
+<body>
+    <nav>
+
+        <button class="burger" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="instrument.html">Your musical instrument</a></li>
+            <li><a href="find.html">Find a musician</a></li>
+        </ul>
+        <img class="logo" src="images/Logo.png" alt="Logo iniziale del sito">
+
+    </nav> 
+
+    <div class="pageFind">
+        <img src="images/copertina-terza-pagina.jpg" alt="image depicting a musician playing the trumpet, in an advertising banner">
+        <h1>Find musicians <br>and create your own band</h1>
+    </div>
+
+    <div class="advertisemet">
+        <button id="open-ad-modal">Place your advertisemet here</button>
+
+        <div id="ad-modal" class="modal-overlay">
+            <div class="modal">
+                <h2>Create your advertisemet</h2>
+                <form id="ad-form">
+                    <label>
+                        Upload your photo:
+                        <input type="file" id="ad-image-input" accept="image/*" required>
+                    </label>
+
+                    <label>
+                        Your description:
+                        <textarea id="ad-text-input" rows="4" required></textarea>
+                    </label>
+
+                    <div class="modal-buttons">
+                        <button type="button" id="cancel-ad" class="modal-button secondary">Cancel</button>
+                        <button type="submit" class="modal-button primary">Add advertisemet</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        
+    </div>
+
+    <div class="contenutoFind">
+        <h3 class="item1">- Notice board -</h3>
+
+        <img src="images/tastierista-terza-pagina.jpg" data-full="images/tastierista-terza-pagina.jpg" alt="person who plays the keyboard">
+        <p>Hello! I'm Marco, a keyboard player with over 10 years' experience.
+            I come from the world of pop and electronic music, but in recent years I have also specialised in soul and R&B.
+            I work regularly in the studio arranging synth and piano parts and have live experience in clubs and festivals.
+            I am looking for a serious project where I can grow and contribute my ideas.
+        </p>
+
+        <img src="images/chitarrista-terza-pagina.jpg" data-full="images/chitarrista-terza-pagina.jpg" alt="person who plays the electric guitar">
+        <p>Hi, I'm Davide, an electric and acoustic guitarist.
+            I've been playing for 15 years and have a background in rock, blues and funk. I've worked as a session musician in the studio and have played many live gigs with cover bands and original projects.
+            I'm looking for a stable band to play live with and produce new material.
+        </p>
+
+        <img src="images/batterista-terza-pagina.jpg" data-full="images/batterista-terza-pagina.jpg" alt="drummer">
+        <p>Hey! I'm Giulia, a drummer with over 12 years of experience.
+            I've played in various rock, pop and light metal projects. I'm precise, used to click tracks and very flexible in arrangements.
+            I've played at regional festivals and often collaborate with studios for custom recordings. I'm ready for a new, motivated and dynamic project.
+        </p>
+
+        <img src="images/chitarrista-2-terza-pagina.jpg" data-full="images/chitarrista-2-terza-pagina.jpg" alt="person who plays the guitar">
+        <p>Nice to meet you! I'm Luca, rhythm and lead guitarist.
+            I move between pop, alternative and ambient sounds. I love to craft the sound, use complex pedalboards and create textures that add depth to the song.
+            I have experience both live and in recording. I am open to collaborations for new creative projects.
+        </p>
+
+        <img src="images/tastierista-2-terza-pagina.jpg" data-full="images/tastierista-2-terza-pagina.jpg" alt="person playing a keyboard with their back turned">
+        <p>Hey! My name is Elisa and I've been playing the keyboard since 2012.
+            I love creating atmospheres, soft pads and harmonic lines that fill the piece without overpowering it. I've played with several indie bands
+            and toured small and medium-sized venues in Italy. I am reliable, creative and also available for studio sessions or
+            remote recordings.
+        </p>
+    </div>
+
+
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img src="" alt="Enlarged image">
+    </div>
+
+
+    <footer>Copyright &copy; Luca Cantale</footer>    
+
+    <script src="JS/function.js"></script>
+</body>
+
+</html>

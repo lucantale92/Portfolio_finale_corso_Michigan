@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your musical instrument</title>
+    <link rel="stylesheet" href="CSS/main.css">
+</head>
+
+<body class="terza-pagina">
+    <nav>
+
+        <button class="burger" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="instrument.html">Your musical instrument</a></li>
+            <li><a href="find.html">Find a musician</a></li>
+        </ul>
+        <img class="logo" src="images/Logo.png" alt="Logo iniziale del sito">
+
+    </nav> 
+
+    <h1 class="title-2">Find out <br>which tool is best for you</h1>
+
+    <section class="quiz-section">
+        <h2>
+            Have you always dreamed of playing an instrument, but don't know where to start?<br>
+            Answer a few simple questions and discover which instrument truly reflects your personality.
+        </h2>
+
+        <form id="quiz-form" class="quiz-form">
+            <!-- STEP 1 -->
+            <div class="question-step active">
+                <div class="question">
+                    <p>1. How would you describe your energy?</p>
+                    <label><input type="radio" name="q1" value="high" required> Very high</label><br>
+                    <label><input type="radio" name="q1" value="medium"> Medium</label><br>
+                    <label><input type="radio" name="q1" value="low"> Calm</label>
+                </div>
+            </div>
+
+            <!-- STEP 2 -->
+            <div class="question-step">
+                <div class="question">
+                    <p>2. Do you prefer playing:</p>
+                    <label><input type="radio" name="q2" value="alone" required> Alone</label><br>
+                    <label><input type="radio" name="q2" value="band"> In a band</label><br>
+                    <label><input type="radio" name="q2" value="both"> Both</label>
+                </div>
+            </div>
+
+            <!-- STEP 3 -->
+            <div class="question-step">
+                <div class="question">
+                    <p>3. What attracts you the most?</p>
+                    <label><input type="radio" name="q3" value="rhythm" required> Rhythm</label><br>
+                    <label><input type="radio" name="q3" value="melody"> Melody</label><br>
+                    <label><input type="radio" name="q3" value="harmony"> Harmony</label>
+                </div>
+            </div>
+
+            <!-- STEP 4 -->
+            <div class="question-step">
+                <div class="question">
+                    <p>4. How much time would you like to dedicate to practice?</p>
+                    <label><input type="radio" name="q4" value="little" required> A little</label><br>
+                    <label><input type="radio" name="q4" value="normal"> A few times a week</label><br>
+                    <label><input type="radio" name="q4" value="a-lot"> Every day</label>
+                </div>
+            </div>
+
+            <!-- Bottoni di navigazione -->
+            <div class="quiz-buttons">
+                <button type="button" id="prev-button" class="quiz-button secondary">Previous</button>
+                <button type="button" id="next-button" class="quiz-button">Next</button>
+                <button type="submit" id="submit-button" class="quiz-button primary">Find your instrument</button>
+            </div>
+        </form>
+
+        <div id="result" class="result-box">
+            <h3>Your ideal instrument is:</h3>
+            <img id="result-image" src="blanc.jpg" alt="vuota" class="result-image">
+            <p id="result-name"></p>
+            <p id="result-text"></p>
+        </div>
+    </section>
+
+
+    <div class="bottom-second-page">
+
+        <img src="images/immagine-seconda-pagina-ok.jpg" alt="a band playing a concert on stage">
+
+        <p>
+            Finding the right musicians can completely transform your artistic journey. 
+            Whether you're looking for a band to grow with, a serious project or simply new collaborations,
+             this page offers you a simple and immediate space to discover talent and make yourself known. 
+             Here you can view ads from musicians with different experiences, genres and personalities, 
+             each eager to share their passion and create something new. If you want to promote yourself, 
+             you can post your ad by uploading a photo and describing your style, 
+             musical influences and the type of project you are looking for: your profile will immediately 
+             appear at the top of the board, so that it is easily visible to other users. 
+             This space was created to connect real musicians who are driven by the desire to express 
+             themselves and play together. Whether your goal is to form a stable band, find companions 
+             to play live or simply share your art, here you can start building connections that could 
+             turn into real and lasting opportunities.
+        </p>
+    </div>
+
+
+    <footer>Copyright &copy; Luca Cantale</footer>    
+
+    <script src="JS/function.js"></script>
+</body>
+
+</html>

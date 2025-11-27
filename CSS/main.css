@@ -1,0 +1,883 @@
+
+body {
+    margin: 0;
+}
+
+
+/* Nav Bar */
+
+nav {
+    background-color:#ebebeb;
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;   
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 1.1em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    background-color: #dcdcdc;
+    border-style: groove;
+    border-radius: 15px;
+    padding: 10px 30px;
+    color: #580641;
+}
+
+nav img {
+    position: absolute;
+    right: 80px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 4vw;
+    width:auto;
+}
+
+a:active {
+    background-color: rgb(209, 209, 209);
+}
+
+
+/* hamburger nascosto sul desktop */
+.burger {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: auto;
+
+}
+
+/* linee dell'hamburger */
+.burger span {
+    display: block;
+    width: 35px;
+    height: 5px;
+    background: #580641;
+    margin: 6px 0;
+}
+
+
+/* Contenuto home */
+
+
+.home img {
+    max-width: 100%;
+    height: auto;
+}
+
+.home h1 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 4vw;
+    color: white;
+    position:absolute;
+    width: 40%;
+    top: 20%;
+    left: 10%;
+    text-shadow: 0 3px 10px rgba(0,0,0,2)
+}
+
+.home p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.8em;
+    font-style: oblique;
+    width: 70%;
+    text-align: center;
+    margin: auto;
+    padding: 4% 0 4% 0;
+    line-height: 1.5em;
+}
+
+.contenutoHome {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    column-gap: 10px;
+    justify-content: center;
+
+}
+
+.contenutoHome figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #dcdcdc;
+    border-radius: 30px;
+}
+
+.contenutoHome h2 {
+    color: rgb(187, 1, 1);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: uppercase;
+    font-size: 2vw;
+}
+
+.contenutoHome img {
+    width: 80%;
+    border-radius: 10px;
+}
+
+.contenutoHome figcaption {
+    width: 80%;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px 0 20px 0;
+
+}
+
+
+
+
+
+
+
+
+
+
+/*Contenuto seconda pagina */
+
+.terza-pagina {
+    background-color: #c7c7c7bb;
+}
+.title-2 {
+    margin: 10% 0 5% 0;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
+    color: #580641;
+    font-size: 2.3vw;
+    line-height: 1.5;
+
+}
+
+.quiz-section {
+    max-width: 800px;
+    margin: 20px auto 60px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+}
+
+.quiz-section h2 {
+    font-size: 1.5em;
+    font-weight: normal;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.quiz-form .question {
+    margin-bottom: 20px;
+}
+
+.quiz-form p {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 1.4em;
+}
+
+.quiz-form label {
+
+    font-size: 1.3em;
+    line-height: 2;
+}
+
+
+.quiz-button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    background-color: #580641;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.quiz-button:hover {
+    background-color: #580641;
+}
+
+.result-box {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #e9ffe9;
+    border: 1px solid #b5e6b5;
+    display: none; /* nascosto fino al click */
+}
+
+.result-box h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 2vw;
+}
+
+.result-box p {
+    font-size: 2vw;
+}
+
+/* Una domanda alla volta */
+.question-step {
+    display: none;
+}
+
+.question-step.active {
+    display: block;
+}
+
+/* Bottoni navigazione quiz */
+.quiz-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.quiz-button.secondary {
+    background-color: #cccccc;
+}
+
+.quiz-button.primary {
+    background-color: #0077cc;
+}
+
+/* Immagine risultato */
+.result-image {
+    max-width: 300px;
+    display: block;
+    margin: 0 auto 15px auto;
+    border-radius: 8px;
+}
+
+.bottom-second-page img {
+    width: 100%;
+}
+
+.bottom-second-page p {
+    font-size: 1.6em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 70%;
+    text-align: center;
+    margin: auto;
+    padding: 50px 0 50px 0;
+    line-height: 1.5;
+}
+
+
+
+
+
+
+
+/*Contenuto terza pagina*/
+
+
+.pageFind img {
+    width: 100%;
+}
+
+.pageFind h1 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 3vw;
+    text-align: center;
+    padding: 40px 0 40px 0;;
+}
+
+.advertisemet button {
+    display: flex;
+    background-color: #e4ad49;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 2em;
+    color: white;
+    margin: auto;
+    text-transform: uppercase;
+
+    border-radius: 40px;
+    padding: 40px 100px 40px 100px;
+    
+}
+
+.advertisemet button:hover {
+    background-color: #f0c87f;
+
+}
+
+.advertisemet button:active {
+    background-color: #c9a054;
+}
+
+.contenutoFind h3 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 3em;
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 20px;
+
+}
+
+.contenutoFind {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    background-color: #e6d4b5;
+    row-gap: 100px;
+    margin-top: 50px;
+    padding: 0 0 50px 0;
+}
+
+.item1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    font-size: 3vw;
+}
+
+.contenutoFind img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 0 0 auto;
+    padding: 0 150px 0 150px ;
+}
+
+.contenutoFind p {
+    font-size: 1.5em;
+    line-height: 1.5em;
+    width: 70%;
+}
+
+/* Centra il bottone annunci */
+.advertisemet {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.advertisemet button {
+    cursor: pointer;
+}
+
+/* MODALE ANNUNCIO */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal {
+    background-color: #ffffff;
+    padding: 20px 30px;
+    border-radius: 8px;
+    max-width: 450px;
+    width: 90%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.modal label {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.modal input[type="file"],
+.modal textarea {
+    width: 100%;
+    margin-top: 5px;
+}
+
+.modal textarea {
+    resize: vertical;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.modal-button {
+    width: auto !important;
+    padding: 10px 20px !important;
+    border-radius: 8px !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    cursor: pointer;
+    border: none !important;
+}
+
+.modal-button.primary {
+    background-color: #0077cc !important;
+    color: #fff !important;
+}
+
+.modal-button.secondary {
+    background-color: #cccccc !important;
+    color: #202020 !important;
+}
+
+.modal-buttons button {
+    display: inline-block !important;
+    margin: 0 !important;
+    padding: 10px 20px !important;
+    background-color: unset !important;
+}
+
+
+
+/*Ligtbox */
+
+.lightbox {
+    position: fixed;
+    inset: 0; /* top:0; right:0; bottom:0; left:0; */
+    background: rgba(0, 0, 0, 0.8);
+    display: none;                 /* nascosto di default */
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;                /* sopra il nav che è 9999 */
+}
+
+.lightbox.open {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.7);
+}
+
+/* pulsante X di chiusura */
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2.5rem;
+    color: #ffffff;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+
+
+
+/* Footer */
+
+footer {
+    background-color: #c9c9c9;
+    text-align: center;
+    padding: 20px;
+    font-weight: 900;
+}
+
+
+
+
+
+/* Media Query Smartphone*/
+
+@media screen and (max-width: 480px) {
+
+/* Prima pagina */
+
+nav {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    padding: 0px 0px;
+    gap: 10px;
+}
+
+/* hamburger visibile */
+.burger {
+    display: inline-block;
+}
+
+/* nascondo le voci del menu */
+nav ul {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    background: #c9c9c9;
+    padding: 10px 15px;
+    position: absolute;
+    top: 100%;      /* subito sotto la barra */
+    left: 0;
+    right: 0;
+}
+
+/*Click per aprire menu */
+
+nav ul.open {
+    display: flex;
+}
+
+nav ul a {
+    display: block;
+    width: 60%;
+    text-align: left;
+}
+
+/* logo accanto all'hamburger */
+
+.logo {
+    width: 25%;
+    height: auto;
+}
+
+
+
+.home h1 {
+    position: static;
+    color: rgba(163, 18, 18, 0.904);
+    font-size: 6vw;
+    width: 80%;
+    margin: auto;
+    padding: 20px 0 0 0;
+    text-align: center;
+    text-shadow: none;
+}
+
+.home p {
+    font-size: 5vw;
+    width: 80%;
+    text-align: justify;
+}
+
+.home img {
+    margin-top: 100px;
+}
+
+.contenutoHome {
+    display: grid;
+    grid-template-columns: 100%
+}
+
+.contenutoHome h2 {
+    font-size: 5vw;
+}
+
+
+
+
+/* Seconda pagina */
+
+.title-2 {
+
+    padding-top: 80px;
+    font-size: 5vw;
+}
+
+.quiz-section {
+
+    width: 80%;
+}
+
+.bottom-second-page p {
+    font-size: 4vw;
+    width: 80%;
+    text-align: justify;
+}
+
+.result-box h3 {
+    font-size: 5vw;
+}
+
+.result-box img {
+    width: 70%;
+}
+
+.result-box p {
+    font-size: 4vw;
+}
+
+
+/* Terza pagina */
+
+
+
+.pageFind img {
+    padding-top:98px;
+}
+
+.pageFind h1 {
+    font-size: 5.5vw;
+    padding: 20px 0 20px 0;
+}
+
+.advertisemet {
+    margin: auto;
+}
+
+.advertisemet button {
+    width: 80%;
+    font-size: 1.5em;
+    justify-content: center;
+    padding: 20px;;
+}
+
+.contenutoFind h3 {
+    font-size: 8vw;
+}
+
+.contenutoFind {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+}
+
+.contenutoFind img {
+    margin: auto;
+    padding: 0;
+}
+
+.contenutoFind p {
+    text-align: justify;
+    margin: auto;
+}
+
+}
+
+
+
+
+
+
+/*Media query tablet */
+
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  
+
+nav {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    padding: 0px 0px;
+    gap: 10px;
+}
+
+/* hamburger visibile */
+.burger {
+    display: inline-block;
+}
+
+/* nascondo le voci del menu */
+nav ul {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    background: #c9c9c9;
+    padding: 10px 15px;
+    position: absolute;
+    top: 100%;      /* subito sotto la barra */
+    left: 0;
+    right: 0;
+}
+
+/*Click per aprire menu */
+
+nav ul.open {
+    display: flex;
+}
+
+nav ul a {
+    display: block;
+    width: 60%;
+    text-align: left;
+}
+
+/* logo accanto all'hamburger */
+
+.logo {
+    width: 25%;
+    height: auto;
+}
+
+
+/* Prima pagina */
+
+.home img {
+    padding-top: 80px;
+
+}
+
+
+.home h1 {
+    position: static;
+    color: rgba(163, 18, 18, 0.904);
+    font-size: 6vw;
+    width: 80%;
+    margin: auto;
+    padding: 20px 0 0 0;
+    text-align: center;
+    text-shadow: none;
+}
+
+.home p {
+    text-align: justify;
+    width: 80%;
+}
+
+.contenutoHome {
+
+    display: grid;
+    grid-template-columns: 45% 45%;
+    row-gap: 30px;
+}
+
+.contenutoHome figure {
+    width: 90%;
+    height: 100%;
+    margin: auto;
+}
+
+
+footer {
+    margin: 20px 0 0 0;
+}
+
+
+/* Seconda pagina */
+
+.title-2 {
+    padding-top: 80px;
+    font-size: 4.5vw;
+}
+
+.quiz-section {
+    width: 80%;
+}
+
+.bottom-second-page p {
+    text-align: justify;
+    width: 80%;
+}
+
+.result-box h3 {
+    font-size: 5vw;
+}
+
+.result-box img {
+    width: 70%;
+}
+
+.result-box p {
+    font-size: 4vw;
+}
+
+
+
+/* Terza pagina */
+
+.contenutoFind img {
+    margin-top: 40px;
+}
+
+.contenutoFind p {
+    width: 80%;
+}
+
+.item1 {
+
+    margin: 40px 0 0 0;
+}
+
+
+}
+
+
+
+
+
+@media screen and (min-width: 769px) and (max-width: 1250px) {
+
+    nav img {
+        display: none;;
+    }
+
+
+
+
+/* Prima pagina */ 
+
+.home img {
+    padding-top: 90px;
+}
+
+.home h1 {
+
+    top: 15%;
+}
+
+.home p {
+    text-align: justify;
+    width: 85%;
+}
+
+.contenutoHome {
+    margin: 0 20px 0 20px;
+}
+
+.contenutoHome figure {
+    margin: 10px 10px 10px 10px ;
+}
+
+
+/* Seconda pagina */ 
+
+.title-2 {
+    padding-top: 60px;
+    font-size: 4vw;
+}
+
+.bottom-second-page p {
+    text-align: justify;
+    width: 85%;
+}
+
+
+/* Terza pagina */
+
+.result-box h3 {
+    font-size: 3vw;
+}
+
+.result-box img {
+    width: 70%;
+}
+
+.result-box p {
+    font-size: 2.5vw;
+}
+
+}

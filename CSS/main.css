@@ -279,6 +279,79 @@ a:active {
     line-height: 1.5;
 }
 
+/*Carousel */
+
+.bottom-second-page {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: 40px;
+    align-items: center;
+    padding: 40px 8%;
+    background-color: #ebebeb; 
+}
+
+.bottom-second-page p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.1em;
+    line-height: 1.6;
+    width: 90%;
+    text-align: justify;
+}
+
+
+.hero-carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;      
+}
+
+.hero-carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.hero-carousel-track img {
+    flex: 0 0 100%;          
+    max-width: 100%;
+    height: auto;             
+    display: block;
+    border-radius: 30px;
+}
+
+/* Bottoni freccia */
+.hero-carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: rgba(0,0,0,0.4);
+    color: #fff;
+    font-size: 2rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.hero-carousel-btn.prev {
+    left: 10px;
+}
+
+.hero-carousel-btn.next {
+    right: 10px;
+}
+
+/* Responsive: sotto i 800px testo sotto l’immagine */
+@media (max-width: 800px) {
+    .bottom-second-page {
+        grid-template-columns: 1fr;
+    }
+
+    .bottom-second-page p {
+        margin-top: 20px;
+    }
+}
+
 
 
 
@@ -486,7 +559,6 @@ a:active {
     cursor: pointer;
     font-family: Arial, Helvetica, sans-serif;
 }
-
 
 
 
@@ -801,6 +873,7 @@ footer {
 
 .contenutoFind img {
     margin-top: 40px;
+    padding: 0 10px 0 0;
 }
 
 .contenutoFind p {
@@ -808,7 +881,6 @@ footer {
 }
 
 .item1 {
-
     margin: 40px 0 0 0;
 }
 
@@ -878,6 +950,11 @@ footer {
 
 .result-box p {
     font-size: 2.5vw;
+}
+
+.contenutoFind img {
+    margin-top: 40px;
+    padding: 0 20 0 0;
 }
 
 }

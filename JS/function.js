@@ -257,6 +257,35 @@ if (lightbox) {
 }
 
 
+/*Carousel */
+
+function setupHeroCarousel() {
+    const carousel = document.querySelector('.hero-carousel');
+    if (!carousel) return; // se non siamo in quella pagina, esci
+
+    const track   = carousel.querySelector('.hero-carousel-track');
+    const slides  = Array.from(track.children);
+    const prevBtn = carousel.querySelector('.hero-carousel-btn.prev');
+    const nextBtn = carousel.querySelector('.hero-carousel-btn.next');
+
+    let index = 0;
+
+    function updateSlide() {
+        track.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    nextBtn.addEventListener('click', () => {
+        index = (index + 1) % slides.length;
+        updateSlide();
+    });
+
+    prevBtn.addEventListener('click', () => {
+        index = (index - 1 + slides.length) % slides.length;
+        updateSlide();
+    });
+}
+
+
 
 
 // INIZIALIZZAZIONE
@@ -265,4 +294,5 @@ if (lightbox) {
 document.addEventListener("DOMContentLoaded", function () {
     setupInstrumentQuiz();
     setupAdModal();
+    setupHeroCarousel();
 });
